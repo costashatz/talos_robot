@@ -174,39 +174,41 @@
                           soft_upper_limit="${0.0 * deg_to_rad - arm_eps}" /> -->
     </joint>
 
-   <gazebo reference="${name}_${side}_1_link">
-     <mu1>0.9</mu1>
-     <mu2>0.9</mu2>
-     <material>Gazebo/FlatBlack</material>
-   </gazebo>
-   <gazebo reference="${name}_${side}_2_link">
-     <mu1>0.9</mu1>
-     <mu2>0.9</mu2>
-     <material>Gazebo/FlatBlack</material>
-   </gazebo>
-   <gazebo reference="${name}_${side}_3_link">
-     <mu1>0.9</mu1>
-     <mu2>0.9</mu2>
-     <material>Gazebo/FlatBlack</material>
-   </gazebo>
-   <gazebo reference="${name}_${side}_4_link">
-     <mu1>0.9</mu1>
-     <mu2>0.9</mu2>
-     <material>Gazebo/FlatBlack</material>
-   </gazebo>
+   <xacro:if value="$(arg enable_gazebo)">
+    <gazebo reference="${name}_${side}_1_link">
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
+      <material>Gazebo/FlatBlack</material>
+    </gazebo>
+    <gazebo reference="${name}_${side}_2_link">
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
+      <material>Gazebo/FlatBlack</material>
+    </gazebo>
+    <gazebo reference="${name}_${side}_3_link">
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
+      <material>Gazebo/FlatBlack</material>
+    </gazebo>
+    <gazebo reference="${name}_${side}_4_link">
+      <mu1>0.9</mu1>
+      <mu2>0.9</mu2>
+      <material>Gazebo/FlatBlack</material>
+    </gazebo>
 
-   <gazebo reference="${name}_${side}_1_joint">
-      <implicitSpringDamper>1</implicitSpringDamper>
-   </gazebo>
-   <gazebo reference="${name}_${side}_2_joint">
-      <implicitSpringDamper>1</implicitSpringDamper>
-   </gazebo>
-   <gazebo reference="${name}_${side}_3_joint">
-      <implicitSpringDamper>1</implicitSpringDamper>
-   </gazebo>
-   <gazebo reference="${name}_${side}_4_joint">
-      <implicitSpringDamper>1</implicitSpringDamper>
-   </gazebo>
+    <gazebo reference="${name}_${side}_1_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="${name}_${side}_2_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="${name}_${side}_3_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+    <gazebo reference="${name}_${side}_4_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
+   </xacro:if>
 
 
     <!--************************-->
@@ -214,8 +216,10 @@
     <!--************************-->
      <xacro:talos_wrist name="arm" parent="${name}_${side}_4_link" side="${side}" reflect="${reflect}" />
 
-    <!-- extensions -->
-    <xacro:include filename="$(find talos_description)/urdf/arm/${side}_arm.transmissions.urdf.xacro" />
+    <xacro:if value="$(arg enable_gazebo)">
+      <!-- extensions -->
+      <xacro:include filename="$(find talos_description)/urdf/arm/${side}_arm.transmissions.urdf.xacro" />
+    </xacro:if>
 
   </xacro:macro>
 

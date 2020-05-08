@@ -17,6 +17,7 @@
         <geometry>
           <box size="0.01 0.01 0.01"/>
         </geometry>
+        <material name="White"/> <!-- Not sure about this -->
       </visual>
     </link>
     <joint name="imu_joint" type="fixed">

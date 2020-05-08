@@ -134,35 +134,37 @@
 
     </joint>
 
-    <gazebo reference="${name}_${side}_5_link">
-      <mu1>0.9</mu1>
-      <mu2>0.9</mu2>
-      <material>Gazebo/White</material>
-    </gazebo>
-    <gazebo reference="${name}_${side}_6_link">
-      <mu1>0.9</mu1>
-      <mu2>0.9</mu2>
-      <material>Gazebo/White</material>
-    </gazebo>
-    <gazebo reference="${name}_${side}_7_link">
-      <mu1>0.9</mu1>
-      <mu2>0.9</mu2>
-      <material>Gazebo/FlatBlack</material>
-    </gazebo>
+    <xacro:if value="$(arg enable_gazebo)">
+      <gazebo reference="${name}_${side}_5_link">
+        <mu1>0.9</mu1>
+        <mu2>0.9</mu2>
+        <material>Gazebo/White</material>
+      </gazebo>
+      <gazebo reference="${name}_${side}_6_link">
+        <mu1>0.9</mu1>
+        <mu2>0.9</mu2>
+        <material>Gazebo/White</material>
+      </gazebo>
+      <gazebo reference="${name}_${side}_7_link">
+        <mu1>0.9</mu1>
+        <mu2>0.9</mu2>
+        <material>Gazebo/FlatBlack</material>
+      </gazebo>
 
-    <gazebo reference="${name}_${side}_5_joint">
-        <implicitSpringDamper>1</implicitSpringDamper>
-    </gazebo>
-    <gazebo reference="${name}_${side}_6_joint">
-        <implicitSpringDamper>1</implicitSpringDamper>
-    </gazebo>
-    <gazebo reference="${name}_${side}_7_joint">
-        <implicitSpringDamper>1</implicitSpringDamper>
-        <provideFeedback>1</provideFeedback>
-    </gazebo>
+      <gazebo reference="${name}_${side}_5_joint">
+          <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+      <gazebo reference="${name}_${side}_6_joint">
+          <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+      <gazebo reference="${name}_${side}_7_joint">
+          <implicitSpringDamper>1</implicitSpringDamper>
+          <provideFeedback>1</provideFeedback>
+      </gazebo>
 
-    <!-- extensions -->
-    <xacro:include filename="$(find talos_description)/urdf/arm/${side}_wrist.transmissions.urdf.xacro" />
+      <!-- extensions -->
+      <xacro:include filename="$(find talos_description)/urdf/arm/${side}_wrist.transmissions.urdf.xacro" />
+    </xacro:if>
   </xacro:macro>
 
 </robot>

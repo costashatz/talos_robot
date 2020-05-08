@@ -32,6 +32,7 @@
         <geometry>
           <mesh filename="package://talos_description/meshes/torso/torso_2.dae" scale="1 1 1"/>
         </geometry>
+        <material name="White" />
       </visual>
 
       <collision>
@@ -54,6 +55,7 @@
         <geometry>
           <mesh filename="package://talos_description/meshes/torso/torso_1.dae" scale="1 1 1"/>
         </geometry>
+        <material name="White" />
       </visual>
 
       <collision>
@@ -92,6 +94,7 @@
         <geometry>
           <mesh filename="package://talos_description/meshes/torso/base_link.dae" scale="1 1 1"/>
         </geometry>
+        <material name="White" />
       </visual>
 
       <collision>
@@ -124,35 +127,37 @@
     </xacro:talos_imu>
 
 
-    <gazebo reference="${name}_1_link">
-        <mu1>0.9</mu1>
-        <mu2>0.9</mu2>
-        <material>Gazebo/White</material>
-    </gazebo>
-    <gazebo reference="${name}_2_link">
-        <mu1>0.9</mu1>
-        <mu2>0.9</mu2>
-        <material>Gazebo/White</material>
-    </gazebo>
-    <gazebo reference="base_link">
-        <mu1>0.9</mu1>
-        <mu2>0.9</mu2>
-        <material>Gazebo/White</material>
-    </gazebo>
+    <xacro:if value="$(arg enable_gazebo)">
+      <gazebo reference="${name}_1_link">
+          <mu1>0.9</mu1>
+          <mu2>0.9</mu2>
+          <material>Gazebo/White</material>
+      </gazebo>
+      <gazebo reference="${name}_2_link">
+          <mu1>0.9</mu1>
+          <mu2>0.9</mu2>
+          <material>Gazebo/White</material>
+      </gazebo>
+      <gazebo reference="base_link">
+          <mu1>0.9</mu1>
+          <mu2>0.9</mu2>
+          <material>Gazebo/White</material>
+      </gazebo>
 
-    <gazebo reference="${name}_1_joint">
-        <implicitSpringDamper>1</implicitSpringDamper>
-    </gazebo>
-    <gazebo reference="${name}_2_joint">
-        <implicitSpringDamper>1</implicitSpringDamper>
-        <provideFeedback>1</provideFeedback>
-    </gazebo>
+      <gazebo reference="${name}_1_joint">
+          <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+      <gazebo reference="${name}_2_joint">
+          <implicitSpringDamper>1</implicitSpringDamper>
+          <provideFeedback>1</provideFeedback>
+      </gazebo>
 
 
-    <!-- extensions -->
-    <xacro:talos_torso_differential_transmission name="${name}" number1="1" number2="2"
-                                                act_reduction1="1.0" act_reduction2="1.0"
-                                                jnt_reduction1="1.0" jnt_reduction2="1.0" />
+      <!-- extensions -->
+      <xacro:talos_torso_differential_transmission name="${name}" number1="1" number2="2"
+                                                  act_reduction1="1.0" act_reduction2="1.0"
+                                                  jnt_reduction1="1.0" jnt_reduction2="1.0" />
+    </xacro:if>
   </xacro:macro>
 
 </robot>
