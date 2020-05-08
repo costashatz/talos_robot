@@ -2,6 +2,66 @@
 Changelog for package talos_controller_configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.4 (2020-05-06)
+------------------
+
+1.1.3 (2020-03-05)
+------------------
+
+1.1.2 (2020-01-14)
+------------------
+* Merge branch 'more_refactor' into 'erbium-devel'
+  remove default safety info from specifics params
+  See merge request robots/talos_robot!84
+* remove default safety info from specifics params
+* Contributors: Sai Kishor Kothakota
+
+1.1.1 (2020-01-14)
+------------------
+* Merge branch 'specifics_refactor' into 'erbium-devel'
+  added changes to choose the specifics yamls
+  See merge request robots/talos_robot!82
+* Revert "added joints to control script"
+  This reverts commit a73220e081a42dcb94a5742feab0fba07c9944cc.
+* added joints to control script
+* renamed walking offsets yaml to walking_specific_params.yaml
+* added optenv based specific_file_path argument
+* added actuator_safety_specific_params file
+* added specific configuration of inertia shaping control
+* added changes to choose the specifics yamls
+* Contributors: Jordan Palacios, Sai Kishor Kothakota
+
+1.1.0 (2020-01-10)
+------------------
+
+1.0.52 (2019-11-29)
+-------------------
+
+1.0.51 (2019-07-15)
+-------------------
+* Merge branch 'stance_actuators_test' into 'erbium-devel'
+  changed definitiion of safety override
+  See merge request robots/talos_robot!75
+* changed definitiion of safety override
+* Contributors: Hilario Tome
+
+1.0.50 (2019-07-10)
+-------------------
+* Merge branch 'stance_actuators_test' into 'erbium-devel'
+  Stance actuators test
+  See merge request robots/talos_robot!74
+* standing test launches
+* Contributors: Hilario Tome
+
+1.0.49 (2019-05-30)
+-------------------
+* added head
+* Merge branch 'head_hal_differential' into 'erbium-devel'
+  added head config files
+  See merge request robots/talos_robot!72
+* added head config files
+* Contributors: Hilario Tome
+
 1.0.48 (2019-03-27)
 -------------------
 * Merge branch 'reenabled_safety' into 'erbium-devel'

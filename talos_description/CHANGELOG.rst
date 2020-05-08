@@ -2,6 +2,49 @@
 Changelog for package talos_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.4 (2020-05-06)
+------------------
+
+1.1.3 (2020-03-05)
+------------------
+* Merge branch 'talos_specific_addons' into 'erbium-devel'
+  Talos specific addons
+  See merge request robots/talos_robot!86
+* change add_ons by addons
+* added talos_addons macro to add talos specific transformations
+* Contributors: Sai Kishor Kothakota, jordanpalacios
+
+1.1.2 (2020-01-14)
+------------------
+
+1.1.1 (2020-01-14)
+------------------
+
+1.1.0 (2020-01-10)
+------------------
+* Merge branch 'disable_gazebo_camera' into 'erbium-devel'
+  added option to disable the gazebo camera plugin
+  See merge request robots/talos_robot!83
+* added option to disable the gazebo camera plugin
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
+1.0.52 (2019-11-29)
+-------------------
+* Merge branch 'new_effort' into 'erbium-devel'
+  Increase max effort for the knees
+  See merge request robots/talos_robot!80
+* Increase max effort for the knees
+* Contributors: Adria Roig, Jordan Palacios
+
+1.0.51 (2019-07-15)
+-------------------
+
+1.0.50 (2019-07-10)
+-------------------
+
+1.0.49 (2019-05-30)
+-------------------
+
 1.0.48 (2019-03-27)
 -------------------
 

@@ -2,6 +2,48 @@
 Changelog for package talos_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.4 (2020-05-06)
+------------------
+* Merge branch 'introspection_controller' into 'erbium-devel'
+  added introspection_controller launch to bringup
+  See merge request robots/talos_robot!89
+* added introspection_controller launch to bringup
+* Contributors: Sai Kishor Kothakota, victor
+
+1.1.3 (2020-03-05)
+------------------
+* Merge branch 'talos_specific_addons' into 'erbium-devel'
+  Talos specific addons
+  See merge request robots/talos_robot!86
+* add new bringup_addons launch for talos specific
+* Contributors: Sai Kishor Kothakota, jordanpalacios
+
+1.1.2 (2020-01-14)
+------------------
+
+1.1.1 (2020-01-14)
+------------------
+
+1.1.0 (2020-01-10)
+------------------
+
+1.0.52 (2019-11-29)
+-------------------
+* Merge branch 'add_legs_to_play_motion' into 'erbium-devel'
+  add move groups for legs
+  See merge request robots/talos_robot!78
+* add move groups for legs
+* Contributors: Luca Marchionni
+
+1.0.51 (2019-07-15)
+-------------------
+
+1.0.50 (2019-07-10)
+-------------------
+
+1.0.49 (2019-05-30)
+-------------------
+
 1.0.48 (2019-03-27)
 -------------------
 
